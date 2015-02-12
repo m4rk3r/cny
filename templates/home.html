@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<section id='cover'>
+    {% if submitted %}
+        <h1>SUCCESS!</h1>
+    {% endif %}
+
+    <ul id='calendar'>
+        <li class='label'>Sun</li>
+        <li class='label'>Mon</li>
+        <li class='label'>Tue</li>
+        <li class='label'>Wed</li>
+        <li class='label'>Thu</li>
+        <li class='label'>Fri</li>
+        <li class='label'>Sat</li>
+    </ul>
+</section>
+<section id='info'>
+    <img src="{% static 'svg/info.svg' %}">
+
+    <form action='' method='POST' id='rsvp'>
+        {% csrf_token %}
+        {{ rsvp.as_p }}
+        <input type='submit'>
+    </form>
+</section>
+
+<audio autoplay loop>
+  <source src="{% static 'music/GunghayINST.mp3' %}" type="audio/mpeg">
+</audio>
+{% endblock %}

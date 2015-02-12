@@ -1,0 +1,124 @@
+@import 'base.scss';
+
+html,body {
+    margin:0;
+}
+
+#cover {
+    @include transition(opacity .5s);
+
+    height:8000px;
+    opacity:0;
+
+    &.on {
+        opacity:1;
+    }
+
+    h1 {
+        font-family:Arial;
+        font-size:18px;
+        width:50px;
+    }
+
+    #calendar {
+
+        position:fixed;
+        @include flexbox();
+        flex-wrap: wrap;
+
+        font-family:'Arial';
+        width:80%;
+
+        li {
+            width:14%;
+            height:200px;
+            border:solid 1px #CCC;
+            list-style-type:none;
+            color:rgb(80,80,80);
+            font-size:12px;
+
+            margin-left:-1px;
+            margin-top:-1px;
+
+            .date {
+                margin: 5px 5px;
+            }
+
+            &.label {
+                border:none;
+                height:20px;
+                margin-right:2px;
+            }
+
+            &.cny {
+                .event {
+                    margin-top:5px;
+                    display:block;
+                    color:rgb(244,42,29);
+                    width:100%;
+                    padding: 0 0 0 5px;
+                }
+            }
+        }
+    }
+}
+
+#info {
+    img {
+        width:80%;
+        margin: 2% 10%;
+    }
+
+    #rsvp {
+        width:400px;
+        margin: 35px auto;
+        text-align:center;
+        font-family:Arial;
+    }
+}
+
+
+
+/* WAVING TXT */
+$offset : -30px;
+$count : 40;
+$duration : 0.8;
+
+
+
+@keyframes wave {
+  from { transform : translateY(0); }
+  to   { transform : translateY( $offset ); }
+}
+@-webkit-keyframes wave {
+  from { transform : translateY(0);}
+  to   { transform : translateY( $offset ); }
+}
+
+.wavetext {
+  position:fixed;
+  margin-top : 10em;
+  text-align : center;
+  white-space: nowrap;
+}
+
+
+.wavetext span {
+  display: inline-block;
+  font-size : 20px;
+
+  -webkit-animation: wave #{$duration}s ease-in-out 0s infinite alternate;
+  animation: wave #{$duration}s ease-in-out 0s infinite alternate;
+}
+
+
+@for $i from 0 to $count {
+  .wavetext :nth-child( #{$count}n + #{$i} ) {
+      -webkit-animation-delay :
+        -#{($count - $i) * 2 * $duration / $count }s;
+
+        animation-delay :
+          -#{($count - $i) * 2 * $duration / $count }s;
+
+  }
+}

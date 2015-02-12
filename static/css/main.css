@@ -1,0 +1,243 @@
+/* flexbox specs */
+html, body {
+  margin: 0; }
+
+#cover {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  height: 8000px;
+  opacity: 0; }
+  #cover.on {
+    opacity: 1; }
+  #cover h1 {
+    font-family: Arial;
+    font-size: 18px;
+    width: 50px; }
+  #cover #calendar {
+    position: fixed;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Arial';
+    width: 80%; }
+    #cover #calendar li {
+      width: 14%;
+      height: 200px;
+      border: solid 1px #CCC;
+      list-style-type: none;
+      color: #505050;
+      font-size: 12px;
+      margin-left: -1px;
+      margin-top: -1px; }
+      #cover #calendar li .date {
+        margin: 5px 5px; }
+      #cover #calendar li.label {
+        border: none;
+        height: 20px;
+        margin-right: 2px; }
+      #cover #calendar li.cny .event {
+        margin-top: 5px;
+        display: block;
+        color: #f42a1d;
+        width: 100%;
+        padding: 0 0 0 5px; }
+
+#info img {
+  width: 80%;
+  margin: 2% 10%; }
+#info #rsvp {
+  width: 400px;
+  margin: 35px auto;
+  text-align: center;
+  font-family: Arial; }
+
+/* WAVING TXT */
+@keyframes wave {
+  from {
+    transform: translateY(0); }
+
+  to {
+    transform: translateY(-30px); } }
+@-webkit-keyframes wave {
+  from {
+    transform: translateY(0); }
+
+  to {
+    transform: translateY(-30px); } }
+.wavetext {
+  position: fixed;
+  margin-top: 10em;
+  text-align: center;
+  white-space: nowrap; }
+
+.wavetext span {
+  display: inline-block;
+  font-size: 20px;
+  -webkit-animation: wave 0.8s ease-in-out 0s infinite alternate;
+  animation: wave 0.8s ease-in-out 0s infinite alternate; }
+
+.wavetext :nth-child(40n + 0) {
+  -webkit-animation-delay: -1.6s;
+  animation-delay: -1.6s; }
+
+.wavetext :nth-child(40n + 1) {
+  -webkit-animation-delay: -1.56s;
+  animation-delay: -1.56s; }
+
+.wavetext :nth-child(40n + 2) {
+  -webkit-animation-delay: -1.52s;
+  animation-delay: -1.52s; }
+
+.wavetext :nth-child(40n + 3) {
+  -webkit-animation-delay: -1.48s;
+  animation-delay: -1.48s; }
+
+.wavetext :nth-child(40n + 4) {
+  -webkit-animation-delay: -1.44s;
+  animation-delay: -1.44s; }
+
+.wavetext :nth-child(40n + 5) {
+  -webkit-animation-delay: -1.4s;
+  animation-delay: -1.4s; }
+
+.wavetext :nth-child(40n + 6) {
+  -webkit-animation-delay: -1.36s;
+  animation-delay: -1.36s; }
+
+.wavetext :nth-child(40n + 7) {
+  -webkit-animation-delay: -1.32s;
+  animation-delay: -1.32s; }
+
+.wavetext :nth-child(40n + 8) {
+  -webkit-animation-delay: -1.28s;
+  animation-delay: -1.28s; }
+
+.wavetext :nth-child(40n + 9) {
+  -webkit-animation-delay: -1.24s;
+  animation-delay: -1.24s; }
+
+.wavetext :nth-child(40n + 10) {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s; }
+
+.wavetext :nth-child(40n + 11) {
+  -webkit-animation-delay: -1.16s;
+  animation-delay: -1.16s; }
+
+.wavetext :nth-child(40n + 12) {
+  -webkit-animation-delay: -1.12s;
+  animation-delay: -1.12s; }
+
+.wavetext :nth-child(40n + 13) {
+  -webkit-animation-delay: -1.08s;
+  animation-delay: -1.08s; }
+
+.wavetext :nth-child(40n + 14) {
+  -webkit-animation-delay: -1.04s;
+  animation-delay: -1.04s; }
+
+.wavetext :nth-child(40n + 15) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s; }
+
+.wavetext :nth-child(40n + 16) {
+  -webkit-animation-delay: -0.96s;
+  animation-delay: -0.96s; }
+
+.wavetext :nth-child(40n + 17) {
+  -webkit-animation-delay: -0.92s;
+  animation-delay: -0.92s; }
+
+.wavetext :nth-child(40n + 18) {
+  -webkit-animation-delay: -0.88s;
+  animation-delay: -0.88s; }
+
+.wavetext :nth-child(40n + 19) {
+  -webkit-animation-delay: -0.84s;
+  animation-delay: -0.84s; }
+
+.wavetext :nth-child(40n + 20) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s; }
+
+.wavetext :nth-child(40n + 21) {
+  -webkit-animation-delay: -0.76s;
+  animation-delay: -0.76s; }
+
+.wavetext :nth-child(40n + 22) {
+  -webkit-animation-delay: -0.72s;
+  animation-delay: -0.72s; }
+
+.wavetext :nth-child(40n + 23) {
+  -webkit-animation-delay: -0.68s;
+  animation-delay: -0.68s; }
+
+.wavetext :nth-child(40n + 24) {
+  -webkit-animation-delay: -0.64s;
+  animation-delay: -0.64s; }
+
+.wavetext :nth-child(40n + 25) {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s; }
+
+.wavetext :nth-child(40n + 26) {
+  -webkit-animation-delay: -0.56s;
+  animation-delay: -0.56s; }
+
+.wavetext :nth-child(40n + 27) {
+  -webkit-animation-delay: -0.52s;
+  animation-delay: -0.52s; }
+
+.wavetext :nth-child(40n + 28) {
+  -webkit-animation-delay: -0.48s;
+  animation-delay: -0.48s; }
+
+.wavetext :nth-child(40n + 29) {
+  -webkit-animation-delay: -0.44s;
+  animation-delay: -0.44s; }
+
+.wavetext :nth-child(40n + 30) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s; }
+
+.wavetext :nth-child(40n + 31) {
+  -webkit-animation-delay: -0.36s;
+  animation-delay: -0.36s; }
+
+.wavetext :nth-child(40n + 32) {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.wavetext :nth-child(40n + 33) {
+  -webkit-animation-delay: -0.28s;
+  animation-delay: -0.28s; }
+
+.wavetext :nth-child(40n + 34) {
+  -webkit-animation-delay: -0.24s;
+  animation-delay: -0.24s; }
+
+.wavetext :nth-child(40n + 35) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s; }
+
+.wavetext :nth-child(40n + 36) {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+.wavetext :nth-child(40n + 37) {
+  -webkit-animation-delay: -0.12s;
+  animation-delay: -0.12s; }
+
+.wavetext :nth-child(40n + 38) {
+  -webkit-animation-delay: -0.08s;
+  animation-delay: -0.08s; }
+
+.wavetext :nth-child(40n + 39) {
+  -webkit-animation-delay: -0.04s;
+  animation-delay: -0.04s; }
