@@ -68,10 +68,6 @@ $(function (){
     var $cal = $('#calendar');
     build_caldendar($cal);
 
-    $cal.css({
-        left: window.innerWidth * 0.5 - $cal.width() * 0.5,
-        top: window.innerHeight * 0.5 - $cal.height() * 0.5,
-    });
 
     var $cny = $cal.find('.cny');
 
@@ -81,16 +77,21 @@ $(function (){
 
     var t,step,scale,x,y;
 
-    var maxscale = 14;
-    var minscale = .25;
+    var maxscale = 10;
+    var minscale = .35;
     var scaler = maxscale/minscale;
 
     $cal.css('transform','scale('+minscale+','+minscale+')');
 
-    var offset = $cny.offset();
-    var _x = offset.left - window.innerWidth*0.5;
-    var _y = offset.top - window.innerHeight*0.5;
+    $cal.css({
+        left: window.innerWidth * 0.5 - $cal.width() * 0.5,
+        top: window.innerHeight * 0.5 - $cal.height() * 0.5,
+    });
 
+    var offset = $cny.offset();
+    var _x = offset.left - window.innerWidth*0.5 + 5;
+    var _y = offset.top - window.innerHeight*0.5 + 10;
+    var is_visible = true;
 
     _.delay(function (){
         $cover.addClass('on');
@@ -98,9 +99,19 @@ $(function (){
 
     unicode_rain();
 
+    var $pls = $('#scroll-icon');
+
     $(window).scroll(function (){
         t = $w.scrollTop();
+
+        if(t > 5){
+            $pls.css('opacity',0);
+        }
         if(t < h){
+            if(!is_visible){
+                $cal.css('opacity',1);
+                is_visible=true;
+            }
             step = easeInOutQuad(t,0,1,h);
             scale = maxscale - (maxscale-minscale) * (1-step);
 
@@ -108,6 +119,11 @@ $(function (){
             y = -(_y * step) * scaler;
 
             $cal.css('transform','translate('+x+'px,'+y+'px) scale('+scale+','+scale+')');
+        }else{
+            if(is_visible){
+                $cal.css('opacity',0);
+                is_visible = false;
+            }
         }
     })
 })
