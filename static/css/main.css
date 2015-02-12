@@ -3,6 +3,18 @@ html, body {
   margin: 0;
   -webkit-font-smoothing: antialiased; }
 
+@keyframes sin {
+  from {
+    transform: translateY(0); }
+
+  to {
+    transform: translateY(25px); } }
+@-webkit-keyframes sin {
+  from {
+    transform: translateY(0); }
+
+  to {
+    transform: translateY(25px); } }
 #cover {
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
@@ -25,10 +37,12 @@ html, body {
     -o-transition: opacity 0.3s;
     transition: opacity 0.3s;
     position: fixed;
-    bottom: 25px;
+    bottom: 50px;
     left: 50%;
     opacity: 1;
-    color: #CCC; }
+    color: #323232;
+    -webkit-animation: sin 1s ease-in-out 0s infinite alternate;
+    animation: sin 1s ease-in-out 0s infinite alternate; }
   #cover #calendar {
     -webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
